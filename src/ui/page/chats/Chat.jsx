@@ -403,8 +403,8 @@ import { io, Socket } from "socket.io-client";
 import { useDispatch, useSelector } from "react-redux";
 import { fetch } from "../../redux/thunk/user/user";
 
-// const ENDPOINT = "http://localhost:3001";
-const ENDPOINT = "https://to-chat-be.up.railway.app";
+const ENDPOINT = "http://localhost:3001";
+// const ENDPOINT = "https://to-chat-be.up.railway.app";
 let socket;
 
 export const Chat = () => {

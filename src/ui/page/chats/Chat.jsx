@@ -402,10 +402,9 @@ import sendMessageIcon from "../../assets/image/send-message_icon.png";
 import { io, Socket } from "socket.io-client";
 import { useDispatch, useSelector } from "react-redux";
 import { fetch } from "../../redux/thunk/user/user";
-import { apiBaseUrl } from "../../utils/url";
 
-// const ENDPOINT = apiBaseUrl || "http://localhost:3001";
-const ENDPOINT = apiBaseUrl;
+// const ENDPOINT = "http://localhost:3001";
+const ENDPOINT = "https://to-chat-be.up.railway.app";
 let socket;
 
 export const Chat = () => {

@@ -44,7 +44,7 @@ export const Login = () => {
       dispatch(resetlogin());
       navigate("/profile");
     } else if (registerSliceStatus === "succeeded") {
-      dispatch(resetregister());m
+      dispatch(resetregister());
       window.location.reload();
     }
   }, [loginSliceStatus, registerSliceStatus]);

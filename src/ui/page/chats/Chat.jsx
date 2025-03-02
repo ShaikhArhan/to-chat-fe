@@ -404,7 +404,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetch } from "../../redux/thunk/user/user";
 import { apiBaseUrl } from "../../utils/url";
 
-const ENDPOINT = apiBaseUrl || "http://localhost:3001";
+// const ENDPOINT = apiBaseUrl || "http://localhost:3001";
+const ENDPOINT = apiBaseUrl;
 let socket;
 
 export const Chat = () => {

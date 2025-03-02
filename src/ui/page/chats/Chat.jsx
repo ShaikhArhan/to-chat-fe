@@ -402,8 +402,9 @@ import sendMessageIcon from "../../assets/image/send-message_icon.png";
 import { io, Socket } from "socket.io-client";
 import { useDispatch, useSelector } from "react-redux";
 import { fetch } from "../../redux/thunk/user/user";
+import { apiBaseUrl } from "../../utils/url";
 
-const ENDPOINT = "http://localhost:3001";
+const ENDPOINT = apiBaseUrl || "http://localhost:3001";
 let socket;
 
 export const Chat = () => {
@@ -447,11 +448,10 @@ export const Chat = () => {
 
   // users fetch
   useEffect(() => {
-
     socket.on("getUser", () => {
       dispatch(fetch());
     });
-    
+
     setPeoples(userDataFetch);
   }, [userDataFetch]);
 

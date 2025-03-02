@@ -1,0 +1,60 @@
+textarea:focus{
+    border: var(--border);
+}
+
+/* 1 */
+/* Common styles for all textareas */
+.textarea-common {
+    font-size: 1.3rem;
+    border: 0.5px solid black;
+    border-radius: 10px;
+    display: block;
+    resize: none;
+  }
+  
+  /* Specific styling for the first textarea */
+  .textarea-variant-1 {
+    width: 40%;
+    max-width: 726px;
+    min-height: auto;
+    margin: 0.5% auto 0.5% 15%;
+    padding: 0.1% 0.5% 0% 0.5%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    line-height: 40px;
+  }
+  
+  /* Focus border */
+  .textarea-focus {
+    outline: var(--focus-border, none);
+  }
+  
+  /* Readonly textarea */
+  .textarea-readonly {
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  /* Specific styling for the second textarea */
+  .textarea-variant-2 {
+    width: auto;
+    background-color: white;
+    height: fit-content;
+    max-width: 726px;
+    max-height: 300px;
+    padding: 28px 0.5% 5px;
+  }
+  
+  /* Specific styling for the third & fourth textarea */
+  .textarea-variant-3 {
+    width: auto;
+    height: 240px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0px 10px;
+    padding: 5px;
+    line-height: 25px;
+  }
+  

@@ -1,0 +1,5 @@
+{
+  "watch": ["src/electron"],
+  "exec": "electron .",
+  "ext": "js,json"
+}

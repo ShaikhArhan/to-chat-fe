@@ -1,0 +1,44 @@
+.profile-container {
+    padding: 20px;
+    max-width: 100%;
+    width: 400px;
+    margin: 5% auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .profile-info {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .password {
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-input {
+    width: auto;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .profile-container {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    .profile-info {
+      font-size: 16px;
+    }
+  
+    .password-input {
+      font-size: 18px;
+    }
+  }
+  

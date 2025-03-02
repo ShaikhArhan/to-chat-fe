@@ -1,0 +1,58 @@
+.todo-container{
+    position: relative;    
+    overflow: auto;            
+    padding: 10px 20px;
+    display: grid;
+    border-radius: 0px 0px 10px 10px;        
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    box-shadow: inset 0px -10px 10px -1px rgba(0, 0, 0, 0.3); /* Bottom shadow */
+}
+
+.todo-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.todo-form {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: flex-start; */
+    margin: 20px 60px;
+    /* padding: 1% 2%;
+    display: grid;
+    gap: 20px; */
+    height: 60px;
+    position: relative;
+    border-radius: 20px 10px 20px 10px;
+    background-color: rgba(210, 180, 140, 0.201);
+    box-shadow: 0px 0px 0.5rem black;
+    transition: margin 0.5s ease-in-out, background-color 0.3s ease-in-out;    
+}
+
+.todo-form:hover {
+    background-color: rgba(210, 180, 140, 0.301);
+    margin: 20px 20px;
+}
+
+.todo-form:not(:hover) {
+    animation: returnMargin 0.5s ease-in-out;
+}
+
+@keyframes returnMargin {
+    from {
+        margin: 20px 20px;
+    }
+    to {
+        margin: 20px 60px;
+    }
+}
+
+.todo-list{
+    height: fit-content;
+}
+
+.textareaPopup{
+    position: absolute;
+    z-index: 3;
+    left: 16.9%;
+    top: 9px;
+}

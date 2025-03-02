@@ -1,0 +1,20 @@
+[
+    {
+      "checked": false,
+      "message": "Complete React component for CivicConnect "
+    },
+    {
+        
+      "checked": true,
+      "message": "Fix admin search API issue"
+    },
+    {
+      "checked": false,
+      "message": "Implement modals for report issues"
+    },
+    {
+      "checked": true,
+      "message": "Upload project to GitHub Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, at omnis! Soluta explicabo ipsum at impedit, rerum incidunt ut quibusdam voluptates pariatur facilis consectetur! Quo ipsum ipsa ad! Nesciunt, aperiam."
+    }
+  ]
+  

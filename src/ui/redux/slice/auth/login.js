@@ -22,6 +22,8 @@ const loginSlice = createSlice({
                 state.error = null;
             })
             .addCase(login.fulfilled, (state, action) => {
+                console.log("mmmmmmmmmmmmmmmmmmmmmmmmmmmm");
+
                 state.status = "succeeded";
                 state.loginData = action.payload;
             })

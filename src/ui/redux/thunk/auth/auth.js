@@ -4,19 +4,19 @@ import { useApi } from "../../../hooks/apiHooks";
 export const login = createAsyncThunk(
     "login", async (data, { rejectWithValue }) => {
         try {
-            const response = await useApi("auth", "post", "login", { body: data })            
+            const response = await useApi("auth", "post", "login", { body: data })
             if (response?.success) {
                 localStorage.setItem("token", JSON.stringify(response.data))
                 console.log('response: ', response.data);
                 return response.data
             }
             else {
-                rejectWithValue("error")
+                return rejectWithValue("error")
             }
         }
         catch (error) {
             console.log('error: ', error);
-            rejectWithValue("error")
+            return rejectWithValue("error")
         }
     }
 )
@@ -31,12 +31,12 @@ export const register = createAsyncThunk(
                 return response.data
             }
             else {
-                rejectWithValue("error")
+                return rejectWithValue("error")
             }
         }
         catch (error) {
             console.log('error: ', error);
-            rejectWithValue("error")
+            return rejectWithValue("error")
         }
     }
 )

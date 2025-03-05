@@ -8,10 +8,12 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { resetlogin } from "../../redux/slice/auth/login";
 import { Button } from "../../component/button/common/Button";
 import { resetregister } from "../../redux/slice/auth/register";
+import useToast from "../../hooks/toastHook";
 
 export const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const showToast = useToast();
   // const [authanticate, setAuthanticate] = useState();
   const loginSliceStatus = useSelector((state) => state?.loginSlice?.status);
   const registerSliceStatus = useSelector(
@@ -41,11 +43,16 @@ export const Login = () => {
 
   useEffect(() => {
     if (loginSliceStatus === "succeeded") {
+      showToast("login successfuly", "success")
       dispatch(resetlogin());
       navigate("/profile");
     } else if (registerSliceStatus === "succeeded") {
+      showToast("regist successfuly", "success")
       dispatch(resetregister());
       window.location.reload();
+    }
+    else if (loginSliceStatus === "failed"||registerSliceStatus === "failed") {
+      showToast("error!!", "error")
     }
   }, [loginSliceStatus, registerSliceStatus]);
 
@@ -56,9 +63,8 @@ export const Login = () => {
   const handleSubmit = (values, { resetForm }) => {
     if (!isLogin) {
       dispatch(register(values));
-      if (registerSliceStatus === "succeeded") {
+      if (registerSliceStatus === "succeeded") {        
         setIsLogin(true);
-        console.log("pppppppp");
       }
     } else {
       dispatch(login(values));

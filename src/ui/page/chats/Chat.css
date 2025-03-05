@@ -296,8 +296,8 @@
 /* work not completed */
 
 .message-info-container {
-  z-index: 999999999;
   position: relative;
+  z-index: 2;
 }
 
 .message-info-status {
@@ -311,12 +311,9 @@
   width: 200px;
   min-width: fit-content;
   right: 28px;
+  bottom: 50%;
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
-}
-
-.message-info-status hr{
-  /* margin-left: 10px; */
 }
 
 .message-info-status-data {
@@ -326,5 +323,5 @@
 }
 
 .message-info:hover + .message-info-status {
-  display: grid;
+  display: block;
 }

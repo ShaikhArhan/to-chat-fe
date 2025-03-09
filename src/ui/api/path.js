@@ -12,6 +12,9 @@ export const path = {
     auth: {
         login: "auth/login",
         register: "auth/register",
+    },
+    chat:{
+        unseenMessage:"chat/get"
     }
 
 }

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { apiBaseUrl } from "../utils/url"
+import { apiBaseUrl } from "../utils/baseApiUrl"
 import { path } from "./path";
 
 export const get = async (args) => {

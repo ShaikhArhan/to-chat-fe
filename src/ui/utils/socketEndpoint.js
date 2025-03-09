@@ -1,0 +1,1 @@
+export const socketEndpoint = import.meta.env.VITE_SOCKET_ENDPOINT

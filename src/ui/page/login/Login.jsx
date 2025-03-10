@@ -9,6 +9,8 @@ import { resetlogin } from "../../redux/slice/auth/login";
 import { Button } from "../../component/button/common/Button";
 import { resetregister } from "../../redux/slice/auth/register";
 import useToast from "../../hooks/toastHook";
+import axios from "axios";
+import { apiBaseUrl } from "../../utils/baseApiUrl";
 
 export const Login = () => {
   const dispatch = useDispatch();
@@ -43,27 +45,31 @@ export const Login = () => {
 
   useEffect(() => {
     if (loginSliceStatus === "succeeded") {
-      showToast("login successfuly", "success")
+      showToast("login successfuly", "success");
       dispatch(resetlogin());
       navigate("/profile");
     } else if (registerSliceStatus === "succeeded") {
-      showToast("regist successfuly", "success")
+      showToast("regist successfuly", "success");
       dispatch(resetregister());
       window.location.reload();
-    }
-    else if (loginSliceStatus === "failed"||registerSliceStatus === "failed") {
-      showToast("error!!", "error")
+    } else if (
+      loginSliceStatus === "failed" ||
+      registerSliceStatus === "failed"
+    ) {
+      showToast("error!!", "error");
     }
   }, [loginSliceStatus, registerSliceStatus]);
 
   useEffect(() => {
+    const test = axios.get(`${apiBaseUrl}/test`);
+    console.log("backend running ->test: ", test);
     dispatch(verifyUser());
   }, []);
 
   const handleSubmit = (values, { resetForm }) => {
     if (!isLogin) {
       dispatch(register(values));
-      if (registerSliceStatus === "succeeded") {        
+      if (registerSliceStatus === "succeeded") {
         setIsLogin(true);
       }
     } else {

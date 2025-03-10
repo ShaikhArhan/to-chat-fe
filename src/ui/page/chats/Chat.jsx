@@ -925,10 +925,7 @@ export const Chat = () => {
 
   useEffect(() => {
     //socket connect
-    socket = io(ENDPOINT, {
-      transports: ["websocket", "polling"],
-    });
-    
+    socket = io(ENDPOINT);
     socket.emit("setup", user);
 
     socket.on("connected", () => {

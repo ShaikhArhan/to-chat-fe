@@ -21,22 +21,20 @@ export const Navbar = () => {
       todoEditSlice,
     })
   );
-  const { token, login } = useSelector(
-    (state) => state?.verification
-  );
+  const { token, login } = useSelector((state) => state?.verification);
   useEffect(() => {
-    dispatch(verifyUser())
-    if(login != null&&login == false){
-      localStorage.removeItem("token")
+    dispatch(verifyUser());
+    if (login != null && login == false) {
+      localStorage.removeItem("token");
     }
-  }, [token,location])
-  
+  }, [token, location]);
+
   useEffect(() => {
     dispatch(setNavbarHeight(navbarRef.current?.offsetHeight));
   }, [dispatch, navbarRef.current?.offsetHeight]);
 
   useEffect(() => {
-    dispatch(fetch(searchInput));
+    dispatch(fetch({ userId: token._id, searchData: searchInput }));
   }, [
     dispatch,
     searchInput,
